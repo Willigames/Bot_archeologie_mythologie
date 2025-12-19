@@ -26,7 +26,10 @@ class Info(commands.Cog):
             return
 
         # Commande autorisée
-        await interaction.response.send_message("https://www.tombraider.com")
+        embed = discord.Embed(title="Clique ici pour en savoir plus sur Tomb Raider")
+        embed.url = "https://www.tombraider.com"
+        embed.set_image(url="https://tse4.mm.bing.net/th/id/OIP.nQ7kjETgRuicgljrnBk4gQHaEo?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3")
+        await interaction.response.send_message(embed=embed)
 
 async def setup(bot : commands.Bot):
     await bot.add_cog(Info(bot))
