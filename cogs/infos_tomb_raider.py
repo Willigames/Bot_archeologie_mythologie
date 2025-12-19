@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord import app_commands
 import os
 
-import tracemalloc
+
 
 INFO_TOMBRAIDER_ID = int(os.getenv('INFO_TOMBRAIDER_ID'))
 class Info(commands.Cog):
@@ -25,5 +25,6 @@ class Info(commands.Cog):
 
         # Commande autorisée
         await interaction.response.send_message("https://www.tombraider.com")
+
 async def setup(bot : commands.Bot):
     await bot.add_cog(Info(bot))
