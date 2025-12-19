@@ -11,13 +11,11 @@ intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
 tree = bot.tree
 
-@bot.tree.command(name="info", description="En savoir plus sur la license Tomb Raider")
-async def info_command(interaction: discord.Interaction):
-    await interaction.response.send_message("https://www.tombraider.com/")
 
 
 @bot.event
 async def on_ready():
+    await bot.load_extension("cogs.infos_tomb_raider")
     await bot.tree.sync()
     print("Bot lancé")
 
