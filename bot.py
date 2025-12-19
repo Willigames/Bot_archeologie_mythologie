@@ -15,6 +15,7 @@ tree = bot.tree
 
 @bot.event
 async def on_ready():
+    await bot.load_extension("cogs.news")
     await bot.load_extension("cogs.archeology_sites")
     await bot.load_extension("cogs.infos_tomb_raider")
     await bot.tree.sync()
