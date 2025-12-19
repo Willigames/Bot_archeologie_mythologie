@@ -3,9 +3,10 @@ from discord.ext import commands
 from discord import app_commands
 import os
 
-
-
+# Récupérer l'ID du salon à partir des variables d'environnement
 INFO_TOMBRAIDER_ID = int(os.getenv('INFO_TOMBRAIDER_ID'))
+
+
 class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -13,6 +14,7 @@ class Info(commands.Cog):
         self.bot = commands.Bot(command_prefix='!', intents=intents)
         self.tree = self.bot.tree
 
+    # Afficher des informations sur Tomb Raider
     @app_commands.command(name="info", description="En savoir plus sur la license Tomb Raider")
     async def info_command(self, interaction: discord.Interaction):
 
