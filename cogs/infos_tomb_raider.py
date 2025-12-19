@@ -1,10 +1,11 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
+import os
 
 import tracemalloc
 
-INFO_CHANNEL_ID = 1451494787566796952
+INFO_TOMBRAIDER_ID = int(os.getenv('INFO_TOMBRAIDER_ID'))
 class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -16,7 +17,7 @@ class Info(commands.Cog):
     async def info_command(self, interaction: discord.Interaction):
 
         # Vérification du salon
-        if interaction.channel_id != INFO_CHANNEL_ID:
+        if interaction.channel_id != INFO_TOMBRAIDER_ID:
             await interaction.response.send_message(
                 "Cette commande ne peut être utilisée que dans le salon #tomb-raider.",
             )
